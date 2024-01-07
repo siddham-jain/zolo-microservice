@@ -9,6 +9,7 @@ import (
 func main(){
 
 	router := chi.NewRouter();
+	router.Use(middleware.Logger);
 	router.Get("/hello", basicHandler);
 
 	server := &http.Server{
